@@ -106,11 +106,11 @@
       <li>Personal records — best lifts per exercise</li>
       <li>Body metrics — optional bodyweight and body-fat log entries</li>
       <li>Coach chat history — messages between you and the AI coach</li>
-      <li>App settings — your display name, unit preferences, and coach mode</li>
+      <li>App settings — your display name, unit preferences, coach mode, age, fitness goal, and available equipment</li>
     </ul>
     <p class="gap">
-      All of this data is stored in a SQLite database on your device. It is never
-      uploaded to our servers or any third-party storage service.
+      All of this data is stored in a SQLite database on your device. It is not uploaded
+      to our servers except where explicitly described in the AI Coach section below.
     </p>
   </section>
 
@@ -122,16 +122,25 @@
     </p>
     <ul>
       <li>Your message text</li>
-      <li>Recent training context — your last lift weight and reps for the current
-          session's first exercise, most recent personal record, days since last session,
-          weekly completion count, and current streak</li>
+      <li>Your fitness goal, available equipment, and selected coach</li>
+      <li>Your age (if provided)</li>
+      <li>Recent workout sessions — titles, types, and durations for the last 30 days</li>
+      <li>Personal records — your best weight and reps across up to 10 exercises</li>
+      <li>Strength volume — total training volume this month vs the prior month</li>
+      <li>Run history — distance, pace, and average heart rate for runs in the last 90 days</li>
+      <li>Plan adherence — your active plan name and completed/skipped session counts</li>
+      <li>Upcoming schedule — sessions and exercises planned for the next 30 days (when a plan is active)</li>
       <li>Conversation history from the current chat session</li>
     </ul>
     <p class="gap">
-      This data is processed by OpenAI in accordance with their
+      This data is routed through our own server (hosted on Railway.app) before being
+      forwarded to OpenAI. The server does not store your fitness data — it processes
+      the request in memory and returns the response. Railway may retain standard server
+      access logs (IP address, timestamp, request size) for operational purposes.
+      OpenAI processes the data in accordance with their
       <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.
-      We do not send your full workout logs, body metrics, or training plan details
-      to OpenAI unless you explicitly paste them into the chat.
+      This context is used solely to generate personalised coaching responses and is
+      not used to train OpenAI's models under their API terms.
     </p>
     <p class="gap">
       <strong>In-App Purchases (RevenueCat)</strong><br />
@@ -141,7 +150,15 @@
       fitness data is shared with RevenueCat. Their privacy policy is available at
       <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.
     </p>
-    <p class="gap">No other third-party data processing services are used.</p>
+    <p class="gap">
+      <strong>Crash Reporting (Sentry)</strong><br />
+      In production builds, the app uses Sentry for crash and error reporting. If the
+      app crashes or encounters an error, Sentry may receive: device type, OS version,
+      app version, a stack trace, and navigation breadcrumbs leading up to the crash.
+      No personal fitness data (workouts, metrics, chat) is included in crash reports.
+      Sentry's privacy policy is available at
+      <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a>.
+    </p>
   </section>
 
   <section>
