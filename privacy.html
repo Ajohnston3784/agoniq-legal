@@ -133,6 +133,16 @@
       <li>Conversation history from the current chat session</li>
     </ul>
     <p class="gap">
+      <strong>Microphone &amp; Voice Input</strong><br />
+      AgonIQ may request access to your device microphone to allow you to send voice
+      messages to the AI coach. Audio is processed on-device by the operating system's
+      speech recognition service (Google Speech Recognition on Android, Apple
+      Speech Recognition on iOS) and converted to text before being sent. We do not
+      record, store, or transmit raw audio — only the resulting text is included in
+      your coach message. You can revoke microphone access at any time in your device
+      Settings.
+    </p>
+    <p class="gap">
       This data is routed through our own server (hosted on Railway.app) before being
       forwarded to OpenAI. The server does not store your fitness data — it processes
       the request in memory and returns the response. Railway may retain standard server
@@ -149,15 +159,6 @@
       purchase receipt data to validate and manage your subscription. No personal
       fitness data is shared with RevenueCat. Their privacy policy is available at
       <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a>.
-    </p>
-    <p class="gap">
-      <strong>Crash Reporting (Sentry)</strong><br />
-      In production builds, the app uses Sentry for crash and error reporting. If the
-      app crashes or encounters an error, Sentry may receive: device type, OS version,
-      app version, a stack trace, and navigation breadcrumbs leading up to the crash.
-      No personal fitness data (workouts, metrics, chat) is included in crash reports.
-      Sentry's privacy policy is available at
-      <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a>.
     </p>
   </section>
 
